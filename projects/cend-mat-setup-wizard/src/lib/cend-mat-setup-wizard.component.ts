@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
     <p>
       cend-mat-setup-wizard works!
     </p>
+    <app-start></app-start>
   `,
   styles: [
   ]

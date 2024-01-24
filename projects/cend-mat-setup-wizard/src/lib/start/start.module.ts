@@ -1,0 +1,33 @@
+import { NgModule } from '@angular/core';
+import { StartOptionComponent } from './start-option/start-option.component';
+import { ImageModule } from './image/image.module';
+import { CommonModule } from '@angular/common';
+import { StartValidationService } from './start-validation.service';
+import { StartStoreService } from './start-store.service';
+import { StartStoreDictionaryService } from './start-store-dictionary.service';
+import { StartService } from './start.service';
+import { StartComponent } from './start.component';
+
+
+
+@NgModule({
+
+    imports: [
+        CommonModule,
+        ImageModule,
+        StartOptionComponent,
+    ],
+    declarations: [
+        StartComponent,
+    ],
+    exports: [
+        StartComponent,
+    ],
+    providers: [
+        StartService,
+        StartValidationService,
+        StartStoreService,
+        StartStoreDictionaryService,
+    ],
+})
+export class StartModule { }
