@@ -1,4 +1,4 @@
 # setup-wizard
 Setup library for wizard
 
-setup for packege
+setup for packege.
