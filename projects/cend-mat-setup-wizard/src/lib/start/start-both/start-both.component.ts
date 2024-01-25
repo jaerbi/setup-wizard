@@ -15,6 +15,7 @@ import { RadioListModule } from "../radio-list/radio-list.module";
 import { RadioListModel } from "../radio-list/radio-list.model";
 import { SelectModule } from "../select/select.module";
 import { SelectModel } from "../select/select.model";
+import { DateTime } from "luxon";
 
 @Component({
     selector: "app-start-both",
@@ -34,12 +35,12 @@ import { SelectModel } from "../select/select.model";
         class: 'wizard_start_option'
     }
 })
-export class StartBothComponent  implements OnInit, OnDestroy {
+export class StartBothComponent implements OnInit, OnDestroy {
 
     @Output() backClick = new EventEmitter<void>();
 
     public readonly onDestroy$ = new Subject();
-    public minDate = this._dateTimeService.getEndOfDayPlusDays(7);
+    public minDate!: DateTime;
     public readonly maxZipCode = AppConsts.maxUsaPostalCodeLength;
     public readonly maxPromoCode = AppConsts.maxPromoCode;
 
@@ -74,6 +75,7 @@ export class StartBothComponent  implements OnInit, OnDestroy {
             .subscribe((result: FormControlStatus) => {
                 this._startValidationService.setValidStart(isFormValid(result));
             });
+        this.minDate = this._dateTimeService.getEndOfDayPlusDays(7);
     }
 
     ngOnDestroy(): void {

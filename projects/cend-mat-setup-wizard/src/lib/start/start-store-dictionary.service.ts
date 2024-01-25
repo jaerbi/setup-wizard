@@ -1,6 +1,7 @@
-import { RadioListModel } from "src/app/shared/radio-list/radio-list.model";
-import { SelectModel } from "src/app/shared/select/select.model";
-import { StorageDuration, StorageLocation } from "src/shared/service-proxies/common-service-proxies";
+import { RadioListModel } from "./radio-list/radio-list.model";
+import { SelectModel } from "./select/select.model";
+import { StorageDuration, StorageLocation } from "./start.model";
+
 
 export class StartStoreDictionaryService {
 

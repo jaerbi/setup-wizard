@@ -15,6 +15,7 @@ import { RadioListModel } from "../radio-list/radio-list.model";
 import { AppConsts } from "../AppConsts";
 import { UtilDirectivesModule } from "../directive/util-directives.module";
 import { UiMaterialDatePickerModule } from "../ui-material-date-picker/ui-material-date-picker.module";
+import { DateTime } from "luxon";
 
 @Component({
     selector: "app-start-storage",
@@ -39,7 +40,7 @@ export class StartStorageComponent implements OnInit, OnDestroy {
     @Output() backClick = new EventEmitter<void>();
 
     public readonly onDestroy$ = new Subject();
-    public minDate = this._dateTimeService.getEndOfDayPlusDays(7);
+    public minDate!: DateTime;
     public readonly maxZipCode = AppConsts.maxUsaPostalCodeLength;
     public readonly maxPromoCode = AppConsts.maxPromoCode;
 
@@ -74,6 +75,7 @@ export class StartStorageComponent implements OnInit, OnDestroy {
             .subscribe((result: FormControlStatus) => {
                 this._startValidationService.setValidStart(isFormValid(result));
             });
+        this.minDate = this._dateTimeService.getEndOfDayPlusDays(7);
     }
 
     ngOnDestroy(): void {

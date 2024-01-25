@@ -4,14 +4,13 @@
   "lib": {
     "entryFile": "src/public-api.ts"
   },
-  "whitelistedNonPeerDependencies": {
-    "@angular/material": "^16.1.0",
-    "@angular/material-luxon-adapter": "^16.1.0",
-    "@types/lodash-es": "^4.17.12",
-    "@types/luxon": "^3.3.3",
-    "lodash-es": "^4.17.21",
-    "luxon": "^3.4.4",
-    "tslib": "^2.3.0"
-  }
+  "allowedNonPeerDependencies": [
+    "@angular/material",
+    "@angular/material-luxon-adapter",
+    "@types/lodash-es",
+    "@types/luxon",
+    "lodash-es",
+    "luxon"
+  ]
 
 }
