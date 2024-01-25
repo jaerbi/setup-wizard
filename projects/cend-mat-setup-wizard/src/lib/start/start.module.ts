@@ -7,6 +7,7 @@ import { StartStoreService } from './start-store.service';
 import { StartStoreDictionaryService } from './start-store-dictionary.service';
 import { StartService } from './start.service';
 import { StartComponent } from './start.component';
+import { DateTimeService } from './date-time.service';
 
 
 
@@ -28,6 +29,7 @@ import { StartComponent } from './start.component';
         StartValidationService,
         StartStoreService,
         StartStoreDictionaryService,
+        DateTimeService,
     ],
 })
 export class StartModule { }

@@ -8,12 +8,12 @@
 <ng-template #actionsTemplate>
   <div class="wizard_start">
     <h1 class="wizard_start-title">
-      How can we help you?
+      How can we help you? MMM
     </h1>
     <div class="wizard_start-actions">
       <div class="wizard_start-actions-img"
            (click)="onSelectQuoteType(type.Move)">
-        <app-image [imgUrl]="'/assets/images/moving-truck.webp'"
+        <app-image [imgUrl]="'./files/moving-truck.webp'"
                    [imgAlt]="'boxes'"
                    [imgClass]="'wizard_start-image'">
         </app-image>
@@ -21,7 +21,7 @@
       </div>
       <div class="wizard_start-actions-img"
            (click)="onSelectQuoteType(type.Storage)">
-        <app-image [imgUrl]="'/assets/images/moving-box.webp'"
+        <app-image [imgUrl]="'./files/moving-box.webp'"
                    [imgAlt]="'boxes'"
                    [imgClass]="'wizard_start-image'">
         </app-image>
@@ -29,7 +29,7 @@
       </div>
       <div class="wizard_start-actions-img"
            (click)="onSelectQuoteType(type.Both)">
-        <app-image [imgUrl]="'/assets/images/boxes.webp'"
+        <app-image [imgUrl]="'./files/boxes.webp'"
                    [imgAlt]="'boxes'"
                    [imgClass]="'wizard_start-image'">
         </app-image>
