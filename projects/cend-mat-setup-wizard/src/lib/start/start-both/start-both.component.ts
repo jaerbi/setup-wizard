@@ -16,6 +16,7 @@ import { RadioListModel } from "../radio-list/radio-list.model";
 import { SelectModule } from "../select/select.module";
 import { SelectModel } from "../select/select.model";
 import { DateTime } from "luxon";
+import { ImageModule } from "../image/image.module";
 
 @Component({
     selector: "app-start-both",
@@ -29,6 +30,7 @@ import { DateTime } from "luxon";
         UtilDirectivesModule,
         RadioListModule,
         SelectModule,
+        ImageModule,
     ],
     providers: [StartService],
     host: {
@@ -55,6 +57,12 @@ export class StartBothComponent implements OnInit, OnDestroy {
     }
     get storageDuration(): SelectModel[] {
         return this._startStoreDictionaryService.storageDuration;
+    }
+    get imageArrow(): string {
+        return this._startStoreService.imageArrow;
+    }
+    get imageCalendar(): string {
+        return this._startStoreService.imageCalendar;
     }
 
     constructor(

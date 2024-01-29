@@ -1,10 +1,11 @@
-import { Component, EventEmitter, HostBinding, Input, OnDestroy, Output, forwardRef } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, OnDestroy, Output, ViewEncapsulation, forwardRef } from '@angular/core';
 import { DateAdapter, MAT_DATE_FORMATS, MatDateFormats } from '@angular/material/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { cloneDeep } from 'lodash-es';
 import { DateTime } from 'luxon';
 import { UiMaterialDatePickerService } from './ui-material-date-picker.service';
 import { ControlValueAccessor, FormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors } from '@angular/forms';
+import { StartStoreService } from '../start-store.service';
 
 export const DATE_FORMATS: MatDateFormats = {
     parse: {
@@ -21,6 +22,8 @@ export const DATE_FORMATS: MatDateFormats = {
 @Component({
     selector: 'ui-material-date-picker',
     templateUrl: 'ui-material-date-picker.component.html',
+    styleUrls: ['./ui-material-date-picker.component.less'],
+    encapsulation: ViewEncapsulation.None,
     providers: [
         { provide: DateAdapter, useClass: UiMaterialDatePickerService },
         { provide: MAT_DATE_FORMATS, useValue: DATE_FORMATS },
@@ -44,6 +47,7 @@ export class UiMaterialDatePickerComponent implements ControlValueAccessor {
     @Input() maxDate!: DateTime;
     @Input() isClear = false;
     @Input() showInfo = false;
+    @Input() imageCalendar!: string;
     @Input() placeholder = 'Select a date';
 
     @Output() dateChange = new EventEmitter<DateTime | null>();

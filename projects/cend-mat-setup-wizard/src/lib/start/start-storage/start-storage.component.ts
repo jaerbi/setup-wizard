@@ -16,6 +16,7 @@ import { AppConsts } from "../AppConsts";
 import { UtilDirectivesModule } from "../directive/util-directives.module";
 import { UiMaterialDatePickerModule } from "../ui-material-date-picker/ui-material-date-picker.module";
 import { DateTime } from "luxon";
+import { ImageModule } from "../image/image.module";
 
 @Component({
     selector: "app-start-storage",
@@ -29,6 +30,7 @@ import { DateTime } from "luxon";
         UtilDirectivesModule,
         RadioListModule,
         SelectModule,
+        ImageModule,
     ],
     providers: [StartService],
     host: {
@@ -55,6 +57,12 @@ export class StartStorageComponent implements OnInit, OnDestroy {
     }
     get storageDuration(): SelectModel[] {
         return this._startStoreDictionaryService.storageDuration;
+    }
+    get imageArrow(): string {
+        return this._startStoreService.imageArrow;
+    }
+    get imageCalendar(): string {
+        return this._startStoreService.imageCalendar;
     }
 
     constructor(

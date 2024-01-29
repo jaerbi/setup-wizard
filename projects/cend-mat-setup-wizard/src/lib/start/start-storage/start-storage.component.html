@@ -1,7 +1,10 @@
 <div class="d-flex d-column gap-24">
   <div class="wizard_start-action-wrapper m-b-8">
-    <i class="cn-icon-arrow cn-icon-arrow-left wizard_start-action"
-       (click)="onBack()"></i>
+    <app-image [imgUrl]="imageArrow"
+               (click)="onBack()"
+               [imgAlt]="'arrow'"
+               [imgClass]="'wizard_start-action'">
+    </app-image>
     <h1 class="wizard_start-title">
       I need storage
     </h1>
@@ -38,6 +41,7 @@
       </label>
       <ui-material-date-picker formControlName="date"
                                [minDate]="minDate"
+                               [imageCalendar]="imageCalendar"
                                [showInfo]="true"
                                required>
       </ui-material-date-picker>

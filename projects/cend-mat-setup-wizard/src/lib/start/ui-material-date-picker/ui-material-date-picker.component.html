@@ -18,7 +18,10 @@
          type="text">
   <label class="requested-icon"
          for="picker">
-    <i class="cn-icon-calendar-solid"></i>
+    <app-image [imgUrl]="imageCalendar"
+               [imgAlt]="'calendar'"
+               [imgClass]="'wizard_start-action cn-icon-calendar-solid'">
+    </app-image>
   </label>
 
   <mat-datepicker #picker

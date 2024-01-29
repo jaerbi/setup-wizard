@@ -1,6 +1,6 @@
 {
   "name": "cend-mat-setup-wizard",
-  "version": "0.0.1",
+  "version": "0.0.11",
   "peerDependencies": {
     "@angular/animations": "17.1.1",
     "@angular/common": "17.1.1",

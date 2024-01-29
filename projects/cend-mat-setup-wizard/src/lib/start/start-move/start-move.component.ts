@@ -11,6 +11,7 @@ import { DateTimeService } from "../date-time.service";
 import { UiMaterialDatePickerModule } from "../ui-material-date-picker/ui-material-date-picker.module";
 import { UtilDirectivesModule } from "../directive/util-directives.module";
 import { DateTime } from "luxon";
+import { ImageModule } from "../image/image.module";
 
 @Component({
     selector: "app-start-move",
@@ -22,6 +23,7 @@ import { DateTime } from "luxon";
         ReactiveFormsModule,
         UiMaterialDatePickerModule,
         UtilDirectivesModule,
+        ImageModule,
     ],
     providers: [StartService],
     host: {
@@ -42,6 +44,12 @@ export class StartMoveComponent implements OnInit, OnDestroy {
     }
     set startOptionForm(value: FormGroup<MoveFormGroup>) {
         this._startStoreService.startFormsData.moveForm = value;
+    }
+    get imageArrow(): string {
+        return this._startStoreService.imageArrow;
+    }
+    get imageCalendar(): string {
+        return this._startStoreService.imageCalendar;
     }
 
     constructor(

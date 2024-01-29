@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatLuxonDateModule } from '@angular/material-luxon-adapter';
 import { UiMaterialDatePickerService } from './ui-material-date-picker.service';
 import { CommonModule } from '@angular/common';
+import { ImageModule } from '../image/image.module';
 
 @NgModule({
     imports: [
@@ -17,6 +18,7 @@ import { CommonModule } from '@angular/common';
         MatDatepickerModule,
         MatFormFieldModule,
         MatInputModule,
+        ImageModule,
     ],
     declarations: [UiMaterialDatePickerComponent],
     exports: [UiMaterialDatePickerComponent],
